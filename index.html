@@ -241,7 +241,7 @@
     <div class="tbl-wrap">
       <table>
         <thead>
-          <tr><th>Reserva</th><th>Equipo</th><th>Asesor</th><th>Proveedor</th><th>Tipo de alerta</th><th id="th-etapa">Etapa</th><th class="num">Días de retraso</th></tr>
+          <tr><th>Clave</th><th>Equipo</th><th>Asesor</th><th>Proveedor</th><th>Tipo de alerta</th><th id="th-etapa">Etapa</th><th class="num">Días de retraso</th></tr>
         </thead>
         <tbody id="tbody"></tbody>
       </table>
@@ -262,7 +262,7 @@
 
 /* ================= Configuración ================= */
 var CSV_URL = 'alertas.csv';
-var DATOS_DE_EJEMPLO = true;               // poner en false cuando alertas.csv sea el registro real
+var DATOS_DE_EJEMPLO = false;               // poner en false cuando alertas.csv sea el registro real
 var CSV_EMBEBIDO = `id_alerta,fecha_alerta,tipo_alerta,reserva,equipo,asesor,proveedor,dias_retraso,ultima_actualizacion
 A-0001,2026-09-01,Sin envío a ensamble > 8 días,R-2026-1112,Motobomba diésel 4 in #204,Daniela Ochoa,,1,2026-09-06
 A-0002,2026-09-02,SLA de ensamble vencido,R-2026-1103,Motobomba diésel 4 in #995,Laura Zapata,Chasis y Soldaduras JM,7,2026-09-07
@@ -461,6 +461,13 @@ function parseCSV(text) {
 // Acepta AAAA-MM-DD y también DD/MM/AAAA (así publica Google Sheets con configuración regional de Colombia)
 function aFecha(s) {
   s = (s || '').trim();
+  // Número de serie de Excel (así entrega las fechas el conector cuando la celda es de tipo fecha)
+  if (/^\d{5}(\.\d+)?$/.test(s)) {
+    var n = Math.floor(+s);
+    if (n < 20000 || n > 80000) return null;
+    var base = new Date(1899, 11, 30 + n);
+    return new Date(base.getFullYear(), base.getMonth(), base.getDate());
+  }
   var m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(s), d, mo, y;
   if (m) { y = +m[1]; mo = +m[2]; d = +m[3]; }
   else {
@@ -842,7 +849,7 @@ function render() {
   }
   ord.forEach(function (r) {
     var tr = el('tr');
-    tr.appendChild(el('td', r.reserva || '—'));
+    tr.appendChild(el('td', r.reserva || r.id || '—'));
     tr.appendChild(el('td', r.equipo || '—'));
     tr.appendChild(el('td', r.asesor));
     tr.appendChild(el('td', r.proveedor || '—'));
