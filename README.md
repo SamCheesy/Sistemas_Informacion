@@ -1,91 +1,88 @@
 # Tablero de retrasos · Soluciones & Partes
 
-Tablero web estático (HTML + Chart.js) para las historias **HU-10** (tablero web de retrasos) y **HU-14** (análisis estadístico de retrasos). No necesita servidor ni base de datos: lee un archivo `alertas.csv`, que es el registro histórico de **HU-06**.
+Tablero web que muestra las alertas de retraso de los equipos: cuántas hay, cuáles siguen abiertas, con qué proveedor y asesor se relacionan y cómo evolucionan por semana y por mes. Es una sola página estática (`index.html`, con Chart.js) que lee el archivo `alertas.csv`. No necesita servidor ni base de datos.
+
+Tablero publicado: https://samcheesy.github.io/Sistemas_Informacion/
+
+## Qué muestra
+
+- **Filtros** por período (todo, 7, 30 o 90 días, o un rango), tipo de alerta, asesor, proveedor y estado. Afectan todo lo que aparece debajo.
+- **Indicadores:** alertas en el período, alertas abiertas, retraso promedio de las abiertas y tipo de alerta más frecuente.
+- **Gráficos:** alertas por semana y por mes, separadas por tipo; alertas por proveedor y por asesor. Cada gráfico tiene un botón **Ver tabla** con los mismos números.
+- **Tabla de alertas abiertas**, ordenada del mayor al menor retraso, con clave, equipo, asesor, proveedor, tipo y días de retraso.
+- Funciona en computador y celular, y respeta el modo claro u oscuro del dispositivo.
 
 ## Archivos
 
 | Archivo | Para qué sirve |
 |---|---|
-| `index.html` | El tablero completo (estilos, lógica y gráficos). |
-| `alertas.csv` | Registro de alertas. Hoy contiene **140 filas de ejemplo (datos ficticios)**. |
-
-## Qué muestra
-
-- **Filtros** (una sola fila, afectan todo lo de abajo): período (todo / 7 / 30 / 90 días / rango), tipo de alerta, asesor, proveedor y estado.
-- **Indicadores:** alertas en el período, alertas abiertas, retraso promedio de las abiertas y tipo más frecuente.
-- **Gráficos:** alertas por semana y por mes (separadas por tipo), alertas por proveedor y alertas por asesor. Cada gráfico tiene un botón **Ver tabla** con los mismos números.
-- **Tabla de alertas abiertas** con reserva, equipo, asesor, proveedor, tipo y días de retraso, del mayor al menor retraso.
-- Funciona en computador y celular, y respeta el modo claro/oscuro del dispositivo.
+| `index.html` | El tablero completo: estilos, lógica y gráficos. |
+| `alertas.csv` | Registro de alertas que lee el tablero. Se reemplaza cada día. |
+| `.github/workflows/actualizar-alertas.yml` | Flujo de GitHub Actions que recibe el CSV nuevo y lo guarda en el repositorio. |
 
 ## Columnas de `alertas.csv`
 
-La primera fila es el encabezado y los nombres deben ser exactamente estos. Acepta separador `,` o `;`.
+La primera fila es el encabezado. El separador puede ser coma o punto y coma.
 
-| Columna | Ejemplo | Origen | Notas |
-|---|---|---|---|
-| `id_alerta` | `R-2026-1112` | HU-06 | Clave de la reserva o del equipo. **Una alerta = clave + tipo**: la misma clave puede tener alertas de tipos distintos y el tablero no las mezcla. |
-| `fecha_alerta` | `2026-11-05` | HU-06 | Fecha en que se detectó por primera vez. Formato `AAAA-MM-DD` o `DD/MM/AAAA`. |
-| `tipo_alerta` | `SLA de ensamble vencido` | HU-06 | Ver tipos abajo. |
-| `reserva` | `R-2026-1112` | HU-06 | Vacío si el equipo no tiene reserva. |
-| `equipo` | `Motobomba diésel 4 in #204` | HU-06 | |
-| `asesor` | `Daniela Ochoa` | HU-06 | Vacío o `Sin asesor` si no hay reserva. |
-| `dias_retraso` | `4` | HU-06 | Entero. Se **actualiza** cada día mientras la alerta siga activa. |
-| `proveedor` | `Metalmecánica Andina` | **Agregar** | No está en HU-06, pero HU-14 lo necesita (retrasos por proveedor). Sale del Excel de control. |
-| `ultima_actualizacion` | `2026-11-17` | **Agregar** | Fecha de la última ejecución del flujo que vio la alerta activa. Define si está abierta o cerrada. |
+| Columna | Ejemplo | Descripción |
+|---|---|---|
+| `id_alerta` | `9102` | Clave de la alerta: serial del equipo o número de reserva. Una alerta se identifica por clave más tipo, así que un mismo equipo puede tener alertas de tipos distintos sin que se mezclen. |
+| `fecha_alerta` | `2026-11-05` | Fecha en que se detectó por primera vez. Se acepta `AAAA-MM-DD` o `DD/MM/AAAA`. |
+| `ultima_actualizacion` | `2026-11-20` | Última fecha en que un flujo vio la alerta activa. Con ella el tablero decide si está abierta o cerrada. |
+| `tipo_alerta` | `SLA de ensamble vencido` | Tipo de alerta. |
+| `equipo` | `Motobomba diésel 4 in` | Descripción del equipo. |
+| `asesor` | `Daniela Ochoa` | Asesor responsable. |
+| `dias_retraso` | `4` | Días de retraso. Se actualiza mientras la alerta siga activa. |
+| `proveedor` | `Metalmecánica Andina` | Proveedor relacionado con la alerta. |
 
-**Encabezados aceptados.** El tablero ignora tildes, mayúsculas y espacios, y reconoce los nombres que ya usan los flujos: `Clave` = `id_alerta`, `Tipo` = `tipo_alerta`, `Fecha Alerta` = `fecha_alerta`, `UltimaActualización` = `ultima_actualizacion`, `Días Retraso` = `dias_retraso`. Para Power Automate conviene renombrar las columnas del Excel a los nombres de la tabla (sin espacios ni tildes): el conector los codifica (`Fecha_x0020_Alerta`) y complica los filtros. Si prefieren dejarlos, se mapean en el paso *Create CSV table* con columnas personalizadas.
+La columna `reserva` es opcional. Si existe, la primera columna de la tabla muestra la reserva en lugar de `id_alerta`.
 
-**Estado de la alerta.** HU-06 no guarda el estado, así que el tablero lo calcula: una alerta está **abierta** si su `ultima_actualizacion` es la más reciente de todo el registro (la última ejecución del flujo la vio activa) y **cerrada** si dejó de actualizarse. Si el registro trae una columna `estado` (`Abierta`/`Cerrada`), se usa esa.
+El tablero ignora tildes, mayúsculas y espacios en los encabezados, y reconoce los nombres del registro en Excel (`Clave`, `Tipo`, `Fecha Alerta`, `UltimaActualización`, `Días Retraso`). Las fechas que llegan como número de serie de Excel también se leen bien.
 
-**Tipos de alerta con color fijo:** `Sin envío a ensamble > 8 días` (HU-02, nombre real), `SLA de ensamble vencido`, `Equipo en producción sin reserva`, `Listo para facturar sin factura`, `Fila sin actualizar`. Los nombres de HU-03, 04, 07 y 12 son provisionales: deben coincidir exactamente con el texto que escriba cada flujo. Los tipos que no estén en la lista se agregan al final; solo hay 5 colores validados, así que con más de 5 tipos el sexto repite color.
+### Estado de una alerta
 
-**Defensas del tablero:** si el flujo repite una misma alerta en varias filas, cuenta solo la más reciente de cada `id_alerta` y avisa. Si falta `proveedor`, el gráfico de proveedores lo indica. Si falta `ultima_actualizacion` y `estado`, muestra todo como abierto y avisa. Una columna `etapa` es opcional: si existe aparece en la tabla.
+El registro no guarda el estado, así que el tablero lo calcula: una alerta está **abierta** si su `ultima_actualizacion` es la más reciente de todo el registro, es decir, si la última ejecución de los flujos todavía la vio activa. Si deja de actualizarse, pasa a **cerrada**. Si el CSV trae una columna `estado` (`Abierta` o `Cerrada`), se usa esa.
 
-## Qué debe hacer el flujo de HU-06
+### Tipos de alerta
 
-1. Tomar la clave de la alerta (reserva, o equipo cuando no hay reserva).
-2. Buscar en el registro una fila con **esa clave y ese tipo** (dos filtros, no solo la clave).
-3. Si **no existe**: insertar fila con `fecha_alerta` = hoy, `dias_retraso` y `ultima_actualizacion` = hoy.
-4. Si **ya existe**: actualizar solo `dias_retraso` y `ultima_actualizacion` (no tocar `fecha_alerta` y no borrar nada).
-5. Incluir `proveedor` tomado del Excel de control.
+| Tipo | Qué detecta |
+|---|---|
+| `Sin envío a ensamble > 8 días` | Equipos que llevan más de 8 días desde la reserva sin enviarse a ensamble. |
+| `SLA de ensamble vencido` | Equipos en ensamble con proveedor que superaron el SLA acordado. |
+| `Equipo en producción sin reserva` | Equipos en ensamble, alistamiento o listos para facturar sin reserva o sin cliente. |
 
-> Con la hoja de Google Sheets, columnas de fecha: **Formato → Número → Fecha personalizada → `aaaa-mm-dd`**, o dejarlas como texto. El tablero también entiende `DD/MM/AAAA`.
+Cada tipo tiene un color fijo. Un tipo nuevo se agrega al final de la lista con el siguiente color disponible.
 
-## Publicar gratis en GitHub Pages
+### Datos repetidos o incompletos
 
-1. Crear un repositorio en GitHub (o usar el del proyecto) y subir `index.html` y `alertas.csv` a la raíz.
-2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)` y **Save**.
+- Si una misma alerta aparece en varias filas, el tablero cuenta solo la más reciente y avisa.
+- Si falta la columna `proveedor`, el gráfico de proveedores lo indica.
+- Si faltan `ultima_actualizacion` y `estado`, todas las alertas se muestran como abiertas y se avisa.
+
+## Cómo se actualiza
+
+El registro vive en un Excel de Microsoft 365 (`TablaAlertas`) que llenan tres flujos de Power Automate. Cada mañana otro flujo, «Publicar tablero», convierte ese registro en CSV y avisa a GitHub. Desde ahí todo es automático:
+
+1. **Power Automate** lee `TablaAlertas`, genera el CSV y envía un evento de repositorio (`actualizar-alertas`) con el contenido codificado en base64.
+2. **GitHub Actions** recibe el evento, comprueba que el CSV empiece por `id_alerta` y reemplaza `alertas.csv` con un commit del usuario `alertas-bot`.
+3. **GitHub Pages** vuelve a publicar el tablero con el cambio.
+
+Si algo falla, el error aparece en la pestaña **Actions** del repositorio.
+
+## Publicar en GitHub Pages
+
+1. Subir `index.html` y `alertas.csv` a la raíz del repositorio, y el flujo en `.github/workflows/actualizar-alertas.yml`.
+2. En **Settings → Pages → Build and deployment**, elegir **Deploy from a branch**, la rama `main` y la carpeta `/ (root)`.
 3. Esperar uno o dos minutos. El tablero queda en `https://<usuario>.github.io/<repositorio>/`.
-
-**Importante:** en el plan gratuito de GitHub, Pages solo funciona con repositorios **públicos**, así que `alertas.csv` también sería público. Con datos reales de la empresa (reservas, asesores, proveedores) hay que anonimizarlos o acordar con el cliente qué se puede publicar.
-
-## Pasar de datos de ejemplo a datos reales
-
-1. Reemplazar `alertas.csv` por el registro real, con las columnas de arriba (o cambiar `CSV_URL` en `index.html` por el enlace del CSV publicado de Google Sheets).
-2. En `index.html`, cambiar `var DATOS_DE_EJEMPLO = true;` por `false`.
-3. Recargar la página para ver los datos nuevos.
-
-## Actualización automática (Power Automate → GitHub Actions → GitHub Pages)
-
-Evita subir el CSV a mano. Usa solo conectores estándar y servicios gratuitos.
-
-**En el repositorio:** subir `.github/workflows/actualizar-alertas.yml` (respetando esa ruta). Ese flujo de GitHub Actions recibe el CSV, valida que empiece por `id_alerta` y reemplaza `alertas.csv`. Pages se republica con el cambio.
-
-**En Power Automate**, un flujo nuevo «Publicar tablero» (programado después de los flujos de alerta, por ejemplo a las 8:00 a. m.):
-1. **Recurrence**, una vez al día.
-2. **List rows present in a table** sobre `Registro_Alertas`. En ⋯ → Settings activar **Pagination** (umbral 5000); por defecto devuelve solo 256 filas. Dejar las columnas de fecha del Excel con formato **Texto** (si no, Excel entrega números de serie en vez de fechas).
-3. **Create CSV table**, *From* = `value` del paso anterior, *Columns* = **Custom** con las 9 columnas (`id_alerta`, `fecha_alerta`, `tipo_alerta`, `reserva`, `equipo`, `asesor`, `proveedor`, `dias_retraso`, `ultima_actualizacion`). Sin esto se cuelan columnas internas de Excel.
-4. **Create a repository dispatch event** (conector GitHub): propietario y repositorio, *Event Name* = `actualizar-alertas`, *Event Payload* = `{"csv_b64": "@{base64(body('Create_CSV_table'))}"}`. El base64 evita que comillas, tildes y saltos de línea rompan el JSON.
-
-**Límites:** GitHub no publica el tamaño máximo de `client_payload` (puede responder «client_payload is too large»). Con unas 140 alertas el mensaje pesa ~25 KB. Si el registro crece mucho, enviar solo las alertas de los últimos 90 días. Un error del flujo se ve en la pestaña **Actions** del repositorio. La acción de GitHub aparece como *Preview* en Power Automate.
 
 ## Probar en local
 
-Abrir `index.html` con doble clic funciona: si el navegador no puede leer `alertas.csv`, la página usa una copia de los datos de ejemplo incluida en el mismo archivo (y lo avisa). Para probar con otro CSV, usar **Cargar otro archivo de alertas (CSV)** al final de la página. Los gráficos necesitan internet, porque Chart.js se carga desde un CDN.
+Abrir `index.html` con doble clic funciona. Para probar con otro CSV, usar **Cargar otro archivo de alertas (CSV)** al final de la página. Los gráficos necesitan conexión a internet porque Chart.js se carga desde un CDN.
 
-## Límites conocidos
+## Límites
 
-- La página no se actualiza sola: depende de que `alertas.csv` (o la hoja publicada) se actualice.
-- Una alerta se considera cerrada cuando deja de actualizarse. Si el flujo falla un día, todas las alertas de ese día quedarían como cerradas hasta la siguiente ejecución.
-- El filtro de período usa `fecha_alerta` (primera detección): una alerta abierta desde septiembre no aparece en «últimos 7 días».
-- No tiene control de acceso: quien tenga el enlace puede ver el tablero.
+- La información se actualiza una vez al día, no en tiempo real.
+- Si un flujo falla un día, sus alertas aparecen como cerradas hasta la siguiente ejecución.
+- El filtro de período usa `fecha_alerta` (primera detección): una alerta abierta desde hace meses no aparece en «últimos 7 días».
+- El repositorio es público, así que cualquiera con el enlace puede ver el tablero y `alertas.csv`. Con datos reales de la empresa hay que anonimizarlos o acordar qué se publica.
+- El tablero no tiene control de acceso.
