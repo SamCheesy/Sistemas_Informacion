@@ -1,0 +1,35 @@
+# Recibe el registro de alertas desde Power Automate y actualiza alertas.csv.
+# Power Automate dispara este flujo con la acción "Create a repository dispatch event"
+# (evento: actualizar-alertas) y envía el CSV codificado en base64 en client_payload.csv_b64.
+name: Actualizar alertas
+
+on:
+  repository_dispatch:
+    types: [actualizar-alertas]
+  workflow_dispatch:   # permite ejecutarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guardar el CSV recibido
+        if: github.event_name == 'repository_dispatch'
+        env:
+          CSV_B64: ${{ github.event.client_payload.csv_b64 }}
+        run: |
+          printf '%s' "$CSV_B64" | base64 -d > alertas.nuevo.csv
+          # Si el archivo no trae el encabezado esperado, no se reemplaza el registro anterior
+          head -n 1 alertas.nuevo.csv | grep -q '^id_alerta' || { echo "El CSV recibido no tiene el encabezado esperado"; exit 1; }
+          mv alertas.nuevo.csv alertas.csv
+
+      - name: Publicar los cambios
+        run: |
+          git config user.name "alertas-bot"
+          git config user.email "alertas-bot@users.noreply.github.com"
+          git add alertas.csv
+          git diff --cached --quiet && echo "Sin cambios" || { git commit -m "Actualizar alertas" && git push; }
