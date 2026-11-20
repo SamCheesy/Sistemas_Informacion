@@ -1,0 +1,141 @@
+id_alerta,fecha_alerta,tipo_alerta,reserva,equipo,asesor,proveedor,dias_retraso,ultima_actualizacion
+A-0001,2026-09-01,Sin envío a ensamble > 8 días,R-2026-1112,Motobomba diésel 4 in #204,Daniela Ochoa,,1,2026-09-06
+A-0002,2026-09-02,SLA de ensamble vencido,R-2026-1103,Motobomba diésel 4 in #995,Laura Zapata,Chasis y Soldaduras JM,7,2026-09-07
+A-0003,2026-09-03,SLA de ensamble vencido,R-2026-1649,Motobomba eléctrica 3 in #585,Camilo Vélez,Metalmecánica Andina,4,2026-09-04
+A-0004,2026-09-05,Listo para facturar sin factura,R-2026-1477,Motobomba eléctrica 3 in #187,Felipe Arango,,3,2026-09-06
+A-0005,2026-09-07,Listo para facturar sin factura,R-2026-1758,Motobomba diésel 6 in #628,Camilo Vélez,,1,2026-09-09
+A-0006,2026-09-07,Fila sin actualizar,R-2026-1540,Motobomba diésel 4 in #876,Daniela Ochoa,Chasis y Soldaduras JM,19,2026-09-13
+A-0007,2026-09-08,Fila sin actualizar,R-2026-1712,Motobomba diésel 6 in #464,Valentina Ruiz,Estructuras del Valle,17,2026-09-13
+A-0008,2026-09-08,Sin envío a ensamble > 8 días,R-2026-1514,Motobomba diésel 6 in #727,Daniela Ochoa,,13,2026-09-10
+A-0009,2026-09-08,Listo para facturar sin factura,R-2026-1837,Motobomba diésel 6 in #304,Daniela Ochoa,,8,2026-09-11
+A-0010,2026-09-09,Listo para facturar sin factura,R-2026-1028,Motobomba gasolina 2 in #365,Sebastián Duque,,4,2026-09-15
+A-0011,2026-09-09,Equipo en producción sin reserva,,Motobomba eléctrica 3 in #473,Sin asesor,Metalmecánica Andina,2,2026-09-11
+A-0012,2026-09-09,SLA de ensamble vencido,R-2026-1481,Motobomba diésel 4 in #590,Camilo Vélez,Metalmecánica Andina,12,2026-09-15
+A-0013,2026-09-09,SLA de ensamble vencido,R-2026-1676,Motobomba diésel 6 in #589,Andrea Restrepo,Estructuras del Valle,6,2026-09-13
+A-0014,2026-09-09,Listo para facturar sin factura,R-2026-1340,Motobomba gasolina 2 in #574,Andrea Restrepo,,7,2026-09-15
+A-0015,2026-09-09,Fila sin actualizar,R-2026-1742,Motobomba diésel 4 in #254,Andrea Restrepo,Fabricaciones Aburrá,24,2026-09-15
+A-0016,2026-09-09,SLA de ensamble vencido,R-2026-1846,Motobomba eléctrica 3 in #259,Mateo Giraldo,Estructuras del Valle,18,2026-09-14
+A-0017,2026-09-10,SLA de ensamble vencido,R-2026-1014,Motobomba diésel 4 in #639,Valentina Ruiz,Chasis y Soldaduras JM,5,2026-09-14
+A-0018,2026-09-10,Fila sin actualizar,R-2026-1199,Motobomba eléctrica 3 in #317,Valentina Ruiz,Metalmecánica Andina,19,2026-09-15
+A-0019,2026-09-10,SLA de ensamble vencido,R-2026-1600,Motobomba diésel 6 in #162,Daniela Ochoa,Estructuras del Valle,12,2026-09-14
+A-0020,2026-09-10,Equipo en producción sin reserva,,Motobomba gasolina 2 in #946,Sin asesor,Industrias Metálicas Norte,9,2026-09-12
+A-0021,2026-09-10,Sin envío a ensamble > 8 días,R-2026-1536,Motobomba gasolina 2 in #895,Juliana Mesa,,3,2026-09-15
+A-0022,2026-09-11,SLA de ensamble vencido,R-2026-1818,Motobomba diésel 4 in #669,Andrea Restrepo,Metalmecánica Andina,2,2026-09-14
+A-0023,2026-09-11,Equipo en producción sin reserva,,Motobomba gasolina 2 in #903,Sin asesor,Estructuras del Valle,2,2026-09-16
+A-0024,2026-09-11,SLA de ensamble vencido,R-2026-1195,Motobomba gasolina 2 in #675,Camilo Vélez,Chasis y Soldaduras JM,1,2026-09-12
+A-0025,2026-09-12,Sin envío a ensamble > 8 días,R-2026-1627,Motobomba diésel 6 in #809,Julián Pineda,,5,2026-09-16
+A-0026,2026-09-12,Sin envío a ensamble > 8 días,R-2026-1826,Motobomba diésel 6 in #815,Felipe Arango,,9,2026-09-15
+A-0027,2026-09-12,Fila sin actualizar,R-2026-1914,Motobomba diésel 6 in #526,Laura Zapata,Industrias Metálicas Norte,13,2026-09-16
+A-0028,2026-09-14,Sin envío a ensamble > 8 días,R-2026-1074,Motobomba gasolina 2 in #174,Natalia Cardona,,4,2026-09-20
+A-0029,2026-09-14,SLA de ensamble vencido,R-2026-1125,Motobomba eléctrica 3 in #246,Santiago Londoño,Metalmecánica Andina,9,2026-09-16
+A-0030,2026-09-14,Fila sin actualizar,R-2026-1224,Motobomba gasolina 2 in #266,Sebastián Duque,Metalmecánica Andina,17,2026-09-16
+A-0031,2026-09-15,Equipo en producción sin reserva,,Motobomba gasolina 2 in #447,Sin asesor,Fabricaciones Aburrá,7,2026-09-17
+A-0032,2026-09-15,SLA de ensamble vencido,R-2026-1094,Motobomba gasolina 2 in #551,Natalia Cardona,Metalmecánica Andina,1,2026-09-19
+A-0033,2026-09-16,SLA de ensamble vencido,R-2026-1638,Motobomba diésel 4 in #907,Camilo Vélez,Fabricaciones Aburrá,8,2026-09-17
+A-0034,2026-09-16,SLA de ensamble vencido,R-2026-1278,Motobomba eléctrica 3 in #873,Andrea Restrepo,Chasis y Soldaduras JM,5,2026-09-20
+A-0035,2026-09-17,Listo para facturar sin factura,R-2026-1692,Motobomba eléctrica 3 in #515,Valentina Ruiz,,3,2026-09-22
+A-0036,2026-09-18,Fila sin actualizar,R-2026-1584,Motobomba eléctrica 3 in #158,Felipe Arango,Metalmecánica Andina,15,2026-09-22
+A-0037,2026-09-18,Fila sin actualizar,R-2026-1275,Motobomba eléctrica 3 in #185,Laura Zapata,Chasis y Soldaduras JM,17,2026-09-19
+A-0038,2026-09-18,SLA de ensamble vencido,R-2026-1124,Motobomba gasolina 2 in #374,Felipe Arango,Metalmecánica Andina,20,2026-09-20
+A-0039,2026-09-19,SLA de ensamble vencido,R-2026-1726,Motobomba diésel 6 in #368,Camilo Vélez,Metalmecánica Andina,2,2026-09-21
+A-0040,2026-09-19,SLA de ensamble vencido,R-2026-1319,Motobomba diésel 6 in #396,Mateo Giraldo,Estructuras del Valle,15,2026-09-24
+A-0041,2026-09-21,Equipo en producción sin reserva,,Motobomba diésel 4 in #356,Sin asesor,Metalmecánica Andina,1,2026-09-22
+A-0042,2026-09-21,SLA de ensamble vencido,R-2026-1517,Motobomba gasolina 2 in #351,Juliana Mesa,Metalmecánica Andina,15,2026-09-22
+A-0043,2026-09-22,Equipo en producción sin reserva,,Motobomba gasolina 2 in #659,Sin asesor,Chasis y Soldaduras JM,7,2026-09-27
+A-0044,2026-09-22,SLA de ensamble vencido,R-2026-1220,Motobomba diésel 6 in #514,Julián Pineda,Metalmecánica Andina,12,2026-09-23
+A-0045,2026-09-23,Listo para facturar sin factura,R-2026-1014,Motobomba eléctrica 3 in #541,Andrea Restrepo,,3,2026-09-24
+A-0046,2026-09-23,SLA de ensamble vencido,R-2026-1861,Motobomba eléctrica 3 in #713,Daniela Ochoa,Estructuras del Valle,8,2026-09-29
+A-0047,2026-09-23,SLA de ensamble vencido,R-2026-1470,Motobomba diésel 4 in #369,Camilo Vélez,Metalmecánica Andina,12,2026-09-26
+A-0048,2026-09-23,Fila sin actualizar,R-2026-1560,Motobomba eléctrica 3 in #323,Daniela Ochoa,Metalmecánica Andina,21,2026-09-25
+A-0049,2026-09-25,SLA de ensamble vencido,R-2026-1390,Motobomba diésel 6 in #354,Andrea Restrepo,Metalmecánica Andina,17,2026-09-26
+A-0050,2026-09-25,SLA de ensamble vencido,R-2026-1836,Motobomba diésel 4 in #503,Andrea Restrepo,Estructuras del Valle,1,2026-09-28
+A-0051,2026-09-25,SLA de ensamble vencido,R-2026-1238,Motobomba diésel 6 in #773,Andrea Restrepo,Fabricaciones Aburrá,20,2026-09-29
+A-0052,2026-09-26,Listo para facturar sin factura,R-2026-1737,Motobomba diésel 6 in #390,Julián Pineda,,3,2026-09-27
+A-0053,2026-09-28,Listo para facturar sin factura,R-2026-1732,Motobomba gasolina 2 in #851,Santiago Londoño,,3,2026-10-03
+A-0054,2026-09-28,Listo para facturar sin factura,R-2026-1582,Motobomba diésel 4 in #946,Valentina Ruiz,,4,2026-09-29
+A-0055,2026-09-28,SLA de ensamble vencido,R-2026-1136,Motobomba gasolina 2 in #955,Mateo Giraldo,Fabricaciones Aburrá,15,2026-10-03
+A-0056,2026-09-29,SLA de ensamble vencido,R-2026-1019,Motobomba gasolina 2 in #370,Mateo Giraldo,Chasis y Soldaduras JM,1,2026-10-03
+A-0057,2026-09-29,Listo para facturar sin factura,R-2026-1766,Motobomba diésel 4 in #775,Laura Zapata,,2,2026-10-05
+A-0058,2026-10-01,Listo para facturar sin factura,R-2026-1258,Motobomba eléctrica 3 in #340,Valentina Ruiz,,4,2026-10-03
+A-0059,2026-10-01,Listo para facturar sin factura,R-2026-1999,Motobomba gasolina 2 in #178,Felipe Arango,,8,2026-10-07
+A-0060,2026-10-02,SLA de ensamble vencido,R-2026-1047,Motobomba diésel 4 in #714,Mateo Giraldo,Chasis y Soldaduras JM,5,2026-10-05
+A-0061,2026-10-02,SLA de ensamble vencido,R-2026-1761,Motobomba diésel 6 in #112,Natalia Cardona,Chasis y Soldaduras JM,16,2026-10-03
+A-0062,2026-10-03,Sin envío a ensamble > 8 días,R-2026-1995,Motobomba diésel 6 in #791,Natalia Cardona,,8,2026-10-06
+A-0063,2026-10-03,Equipo en producción sin reserva,,Motobomba gasolina 2 in #577,Sin asesor,Metalmecánica Andina,2,2026-10-08
+A-0064,2026-10-05,SLA de ensamble vencido,R-2026-1087,Motobomba gasolina 2 in #178,Laura Zapata,Metalmecánica Andina,17,2026-10-09
+A-0065,2026-10-05,Fila sin actualizar,R-2026-1396,Motobomba diésel 6 in #176,Camilo Vélez,Fabricaciones Aburrá,12,2026-10-07
+A-0066,2026-10-05,Listo para facturar sin factura,R-2026-1268,Motobomba diésel 6 in #717,Laura Zapata,,5,2026-10-06
+A-0067,2026-10-06,Equipo en producción sin reserva,,Motobomba gasolina 2 in #503,Sin asesor,Metalmecánica Andina,1,2026-10-08
+A-0068,2026-10-07,SLA de ensamble vencido,R-2026-1503,Motobomba diésel 6 in #526,Natalia Cardona,Estructuras del Valle,12,2026-10-11
+A-0069,2026-10-07,SLA de ensamble vencido,R-2026-1860,Motobomba eléctrica 3 in #959,Daniela Ochoa,Metalmecánica Andina,13,2026-10-08
+A-0070,2026-10-07,Fila sin actualizar,R-2026-1200,Motobomba eléctrica 3 in #359,Natalia Cardona,Fabricaciones Aburrá,21,2026-10-08
+A-0071,2026-10-09,SLA de ensamble vencido,R-2026-1890,Motobomba gasolina 2 in #873,Mateo Giraldo,Estructuras del Valle,9,2026-10-10
+A-0072,2026-10-10,SLA de ensamble vencido,R-2026-1052,Motobomba diésel 6 in #355,Valentina Ruiz,Metalmecánica Andina,9,2026-10-14
+A-0073,2026-10-12,Sin envío a ensamble > 8 días,R-2026-1194,Motobomba gasolina 2 in #129,Sebastián Duque,,13,2026-10-18
+A-0074,2026-10-12,Sin envío a ensamble > 8 días,R-2026-1896,Motobomba diésel 6 in #836,Laura Zapata,,2,2026-10-13
+A-0075,2026-10-13,Fila sin actualizar,R-2026-1420,Motobomba eléctrica 3 in #597,Felipe Arango,Chasis y Soldaduras JM,11,2026-10-18
+A-0076,2026-10-13,SLA de ensamble vencido,R-2026-1483,Motobomba eléctrica 3 in #856,Felipe Arango,Metalmecánica Andina,9,2026-10-17
+A-0077,2026-10-13,Equipo en producción sin reserva,,Motobomba gasolina 2 in #222,Sin asesor,Metalmecánica Andina,3,2026-10-19
+A-0078,2026-10-13,SLA de ensamble vencido,R-2026-1212,Motobomba diésel 6 in #563,Juliana Mesa,Industrias Metálicas Norte,11,2026-10-17
+A-0079,2026-10-14,Sin envío a ensamble > 8 días,R-2026-1560,Motobomba diésel 4 in #278,Camilo Vélez,,6,2026-10-19
+A-0080,2026-10-15,SLA de ensamble vencido,R-2026-1244,Motobomba diésel 6 in #120,Daniela Ochoa,Industrias Metálicas Norte,14,2026-10-19
+A-0081,2026-10-15,Sin envío a ensamble > 8 días,R-2026-1536,Motobomba eléctrica 3 in #446,Camilo Vélez,,13,2026-10-16
+A-0082,2026-10-16,Sin envío a ensamble > 8 días,R-2026-1588,Motobomba diésel 6 in #803,Julián Pineda,,9,2026-10-18
+A-0083,2026-10-16,SLA de ensamble vencido,R-2026-1918,Motobomba gasolina 2 in #542,Camilo Vélez,Estructuras del Valle,10,2026-10-17
+A-0084,2026-10-17,SLA de ensamble vencido,R-2026-1435,Motobomba gasolina 2 in #701,Natalia Cardona,Industrias Metálicas Norte,16,2026-11-17
+A-0085,2026-10-17,SLA de ensamble vencido,R-2026-1949,Motobomba gasolina 2 in #559,Laura Zapata,Estructuras del Valle,8,2026-10-19
+A-0086,2026-10-17,SLA de ensamble vencido,R-2026-1534,Motobomba gasolina 2 in #187,Julián Pineda,Metalmecánica Andina,18,2026-10-18
+A-0087,2026-10-19,Listo para facturar sin factura,R-2026-1238,Motobomba diésel 4 in #760,Juliana Mesa,,5,2026-10-25
+A-0088,2026-10-21,SLA de ensamble vencido,R-2026-1651,Motobomba diésel 4 in #172,Felipe Arango,Chasis y Soldaduras JM,10,2026-10-26
+A-0089,2026-10-21,SLA de ensamble vencido,R-2026-1267,Motobomba diésel 4 in #650,Camilo Vélez,Chasis y Soldaduras JM,10,2026-10-24
+A-0090,2026-10-21,Fila sin actualizar,R-2026-1660,Motobomba diésel 6 in #660,Valentina Ruiz,Metalmecánica Andina,17,2026-11-17
+A-0091,2026-10-22,Sin envío a ensamble > 8 días,R-2026-1665,Motobomba diésel 4 in #298,Daniela Ochoa,,8,2026-10-28
+A-0092,2026-10-22,Sin envío a ensamble > 8 días,R-2026-1263,Motobomba gasolina 2 in #479,Camilo Vélez,,4,2026-10-28
+A-0093,2026-10-23,SLA de ensamble vencido,R-2026-1430,Motobomba diésel 4 in #916,Daniela Ochoa,Estructuras del Valle,10,2026-10-28
+A-0094,2026-10-23,SLA de ensamble vencido,R-2026-1507,Motobomba diésel 6 in #336,Julián Pineda,Metalmecánica Andina,15,2026-10-26
+A-0095,2026-10-24,SLA de ensamble vencido,R-2026-1638,Motobomba diésel 6 in #596,Felipe Arango,Metalmecánica Andina,14,2026-10-25
+A-0096,2026-10-24,Fila sin actualizar,R-2026-1149,Motobomba diésel 4 in #710,Laura Zapata,Metalmecánica Andina,14,2026-10-30
+A-0097,2026-10-26,SLA de ensamble vencido,R-2026-1402,Motobomba eléctrica 3 in #850,Felipe Arango,Chasis y Soldaduras JM,4,2026-10-28
+A-0098,2026-10-26,SLA de ensamble vencido,R-2026-1189,Motobomba gasolina 2 in #132,Mateo Giraldo,Estructuras del Valle,10,2026-10-30
+A-0099,2026-10-27,Listo para facturar sin factura,R-2026-1339,Motobomba diésel 4 in #102,Felipe Arango,,2,2026-10-30
+A-0100,2026-10-28,Sin envío a ensamble > 8 días,R-2026-1906,Motobomba diésel 6 in #489,Andrea Restrepo,,6,2026-10-31
+A-0101,2026-10-29,Listo para facturar sin factura,R-2026-1442,Motobomba gasolina 2 in #300,Andrea Restrepo,,6,2026-11-02
+A-0102,2026-10-29,SLA de ensamble vencido,R-2026-1372,Motobomba gasolina 2 in #353,Sebastián Duque,Estructuras del Valle,13,2026-11-17
+A-0103,2026-10-29,SLA de ensamble vencido,R-2026-1064,Motobomba diésel 6 in #865,Valentina Ruiz,Metalmecánica Andina,3,2026-11-01
+A-0104,2026-10-29,SLA de ensamble vencido,R-2026-1343,Motobomba eléctrica 3 in #864,Julián Pineda,Chasis y Soldaduras JM,11,2026-11-01
+A-0105,2026-10-29,SLA de ensamble vencido,R-2026-1773,Motobomba diésel 4 in #124,Mateo Giraldo,Industrias Metálicas Norte,8,2026-11-17
+A-0106,2026-10-29,Equipo en producción sin reserva,,Motobomba gasolina 2 in #908,Sin asesor,Estructuras del Valle,5,2026-11-02
+A-0107,2026-10-29,SLA de ensamble vencido,R-2026-1508,Motobomba eléctrica 3 in #942,Camilo Vélez,Industrias Metálicas Norte,5,2026-11-01
+A-0108,2026-10-30,Fila sin actualizar,R-2026-1471,Motobomba diésel 4 in #624,Daniela Ochoa,Industrias Metálicas Norte,16,2026-11-01
+A-0109,2026-10-30,SLA de ensamble vencido,R-2026-1066,Motobomba eléctrica 3 in #264,Mateo Giraldo,Estructuras del Valle,14,2026-10-31
+A-0110,2026-10-30,SLA de ensamble vencido,R-2026-1086,Motobomba gasolina 2 in #277,Camilo Vélez,Estructuras del Valle,8,2026-11-17
+A-0111,2026-11-02,Sin envío a ensamble > 8 días,R-2026-1912,Motobomba diésel 4 in #898,Natalia Cardona,,14,2026-11-05
+A-0112,2026-11-02,Sin envío a ensamble > 8 días,R-2026-1381,Motobomba eléctrica 3 in #303,Camilo Vélez,,8,2026-11-04
+A-0113,2026-11-02,SLA de ensamble vencido,R-2026-1288,Motobomba eléctrica 3 in #166,Santiago Londoño,Estructuras del Valle,13,2026-11-04
+A-0114,2026-11-02,Sin envío a ensamble > 8 días,R-2026-1236,Motobomba diésel 4 in #769,Mateo Giraldo,,8,2026-11-03
+A-0115,2026-11-02,SLA de ensamble vencido,R-2026-1904,Motobomba eléctrica 3 in #141,Valentina Ruiz,Industrias Metálicas Norte,10,2026-11-03
+A-0116,2026-11-02,SLA de ensamble vencido,R-2026-1996,Motobomba diésel 4 in #481,Valentina Ruiz,Metalmecánica Andina,17,2026-11-06
+A-0117,2026-11-03,Equipo en producción sin reserva,,Motobomba diésel 4 in #208,Sin asesor,Chasis y Soldaduras JM,11,2026-11-08
+A-0118,2026-11-03,SLA de ensamble vencido,R-2026-1038,Motobomba diésel 6 in #361,Daniela Ochoa,Metalmecánica Andina,2,2026-11-09
+A-0119,2026-11-04,Fila sin actualizar,R-2026-1834,Motobomba eléctrica 3 in #289,Andrea Restrepo,Metalmecánica Andina,19,2026-11-17
+A-0120,2026-11-04,SLA de ensamble vencido,R-2026-1507,Motobomba diésel 4 in #914,Juliana Mesa,Metalmecánica Andina,13,2026-11-17
+A-0121,2026-11-06,SLA de ensamble vencido,R-2026-1546,Motobomba eléctrica 3 in #519,Andrea Restrepo,Metalmecánica Andina,10,2026-11-17
+A-0122,2026-11-06,Sin envío a ensamble > 8 días,R-2026-1052,Motobomba eléctrica 3 in #524,Daniela Ochoa,,7,2026-11-17
+A-0123,2026-11-06,Listo para facturar sin factura,R-2026-1821,Motobomba diésel 6 in #500,Daniela Ochoa,,7,2026-11-17
+A-0124,2026-11-07,SLA de ensamble vencido,R-2026-1923,Motobomba diésel 4 in #515,Andrea Restrepo,Metalmecánica Andina,19,2026-11-11
+A-0125,2026-11-07,Listo para facturar sin factura,R-2026-1133,Motobomba diésel 6 in #756,Andrea Restrepo,,7,2026-11-17
+A-0126,2026-11-07,Equipo en producción sin reserva,,Motobomba diésel 6 in #249,Sin asesor,Estructuras del Valle,6,2026-11-17
+A-0127,2026-11-09,Sin envío a ensamble > 8 días,R-2026-1947,Motobomba gasolina 2 in #602,Andrea Restrepo,,13,2026-11-11
+A-0128,2026-11-09,SLA de ensamble vencido,R-2026-1857,Motobomba gasolina 2 in #422,Laura Zapata,Fabricaciones Aburrá,2,2026-11-17
+A-0129,2026-11-10,Equipo en producción sin reserva,,Motobomba diésel 6 in #755,Sin asesor,Metalmecánica Andina,4,2026-11-17
+A-0130,2026-11-11,Equipo en producción sin reserva,,Motobomba gasolina 2 in #287,Sin asesor,Metalmecánica Andina,10,2026-11-17
+A-0131,2026-11-12,SLA de ensamble vencido,R-2026-1530,Motobomba diésel 6 in #352,Andrea Restrepo,Estructuras del Valle,7,2026-11-17
+A-0132,2026-11-12,Sin envío a ensamble > 8 días,R-2026-1775,Motobomba eléctrica 3 in #220,Natalia Cardona,,7,2026-11-17
+A-0133,2026-11-13,Sin envío a ensamble > 8 días,R-2026-1642,Motobomba gasolina 2 in #415,Sebastián Duque,,10,2026-11-17
+A-0134,2026-11-13,SLA de ensamble vencido,R-2026-1376,Motobomba diésel 4 in #103,Felipe Arango,Estructuras del Valle,20,2026-11-16
+A-0135,2026-11-13,SLA de ensamble vencido,R-2026-1781,Motobomba diésel 6 in #929,Mateo Giraldo,Industrias Metálicas Norte,16,2026-11-17
+A-0136,2026-11-13,SLA de ensamble vencido,R-2026-1367,Motobomba gasolina 2 in #616,Felipe Arango,Metalmecánica Andina,17,2026-11-17
+A-0137,2026-11-13,SLA de ensamble vencido,R-2026-1133,Motobomba diésel 4 in #155,Andrea Restrepo,Chasis y Soldaduras JM,17,2026-11-16
+A-0138,2026-11-14,Fila sin actualizar,R-2026-1139,Motobomba diésel 4 in #298,Andrea Restrepo,Metalmecánica Andina,14,2026-11-16
+A-0139,2026-11-16,SLA de ensamble vencido,R-2026-1830,Motobomba diésel 6 in #167,Laura Zapata,Metalmecánica Andina,12,2026-11-17
+A-0140,2026-11-16,Equipo en producción sin reserva,,Motobomba eléctrica 3 in #728,Sin asesor,Metalmecánica Andina,5,2026-11-17
